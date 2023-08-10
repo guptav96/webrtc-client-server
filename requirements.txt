@@ -1,0 +1,5 @@
+numpy
+aiortc
+aiohttp
+aiohttp-requests
+opencv-python

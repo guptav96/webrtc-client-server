@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: myclient-container
+          image: myclient:latest
+          env:
+            - name: HOST_IP
+              value: server-deployment
+            - name: PORT
+              value: "8080"
